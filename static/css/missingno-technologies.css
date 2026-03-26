@@ -1328,6 +1328,10 @@
     height: auto;
   }
 
+  .section.section-training.bg-grid {
+    text-align: left;
+  }
+
   .int-banner {
     width: -moz-fit-content;
     width: fit-content;
