@@ -1,0 +1,11 @@
+baseURL = "/"
+languageCode = "fr-fr"
+title = "MissingNo Technologies"
+relativeURLs = true
+canonifyURLs = false
+disableKinds = ["taxonomy", "term", "RSS", "sitemap"]
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
