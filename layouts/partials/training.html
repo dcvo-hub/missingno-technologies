@@ -1,0 +1,36 @@
+{{ $t := .Params.training }}
+<section class="section section-training bg-grid">
+  <div class="elem-square-abs-6"></div>
+  <div class="elem-square-abs-7"></div>
+  <div class="elem-square-abs-8"></div>
+  <div class="w-layout-blockcontainer container w-container">
+    <div class="subtitle">{{ $t.badge }}</div>
+    <div class="pt40"></div>
+    <h2 class="title-h2 color-white glitch-word">{{ $t.heading }}</h2>
+    <div class="pt40"></div>
+    <div class="text-xl w70 block-center">{{ $t.description }}</div>
+    <div class="wrapper-training">
+      {{ range $t.courses }}
+      <div class="item-training item-shadow">
+        <div class="bg-icon-training block-center">
+          {{ if .image }}
+            {{ if strings.HasSuffix .image ".svg" }}
+            <img src="{{ .image }}" loading="lazy" alt="{{ .image_alt }}">
+            {{ else }}
+            {{ $img := .image }}{{ $base := strings.TrimSuffix ".png" $img }}
+            <img src="{{ $img }}" loading="lazy" sizes="100vw" srcset="{{ $base }}-p-500.png 500w, {{ $base }}-p-800.png 800w, {{ $base }}-p-1080.png 1080w, {{ $img }} 1200w" alt="{{ .image_alt }}">
+            {{ end }}
+          {{ else if .icon }}
+          <div class="icon-training glitch-icon w-embed">{{ partial "icon.html" (dict "name" .icon) }}</div>
+          {{ end }}
+        </div>
+        <div class="pt20"></div>
+        <h3 class="title-h3">{{ .title }}</h3>
+        <div class="pt40"></div>
+        <div class="text-lg color-gray">{{ .description }}</div>
+        <div class="overlay"></div>
+      </div>
+      {{ end }}
+    </div>
+  </div>
+</section>

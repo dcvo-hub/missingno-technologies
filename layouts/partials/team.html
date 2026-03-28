@@ -1,0 +1,40 @@
+{{ $left := .Params.team.left }}
+{{ $right := .Params.team.right }}
+<section class="section section-team" id="team">
+  <div class="w-layout-blockcontainer container w-container">
+    <div class="columns columns-team">
+      <div class="col-1-contact">
+        <h2 class="title-h2">{{ $left.heading_prefix }}<span class="glitch-word color-1">{{ $left.heading_highlight }}</span></h2>
+        <div class="pt40"></div>
+        <div class="text-xl color-gray">{{ $left.description }}</div>
+        <div class="items-contact">
+          {{ range $left.tags }}
+          <div class="item-contact">
+            <div class="text-block-2">[{{ . }}]</div>
+          </div>
+          {{ end }}
+        </div>
+      </div>
+      <div class="col-2-team">
+        <h2 class="title-h2">{{ $right.heading }}</h2>
+        <div class="pt40"></div>
+        <div class="text-xl color-gray">{{ $right.description }}</div>
+        <div class="pt40"></div>
+        <div class="wrapper-image-contact item-shadow"><img src="{{ $right.image.src }}" loading="lazy" sizes="100vw" srcset="{{ $right.image.src }} 500w, {{ $right.image.src }} 750w" alt="{{ $right.image.alt }}" class="image-2">
+          <div class="block-image-city">
+            <div>{{ $right.location }}</div>
+          </div>
+        </div>
+        <div class="pt60"></div>
+        <div class="wrapper-list-team">
+          {{ range $right.features }}
+          <div class="line-list-team">
+            <div class="icon-team w-embed">{{ partial "icon.html" (dict "name" "circle-check") }}</div>
+            <div class="text-lg text-bold">{{ . }}</div>
+          </div>
+          {{ end }}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

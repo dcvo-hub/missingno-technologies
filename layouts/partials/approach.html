@@ -1,0 +1,27 @@
+{{ $a := .Params.approach }}
+<section class="section section-approach" id="approach">
+  <div class="w-layout-blockcontainer container w-container">
+    <div class="w70 color-white">
+      <div class="int-approach">
+        <div><strong>{{ $a.badge }}</strong></div>
+      </div>
+      <div class="pt40"></div>
+      <h2 class="title-h2"><span class="glitch-word">{{ $a.heading_glitch }}</span><br><span class="orange-200">{{ $a.heading_orange }}</span></h2>
+      <div class="pt20"></div>
+      <div class="text-xl">{{ $a.description }}</div>
+    </div>
+    <div class="wrapper-approach">
+      {{ range $a.cards }}
+      <div class="item-approach item-shadow text-lg">
+        <div class="bg-icon-approach">
+          <div class="icon-approach w-embed">{{ partial "icon.html" (dict "name" .icon) }}</div>
+        </div>
+        <div class="pt20"></div>
+        <h3 class="title-h4">{{ .title }}</h3>
+        <div class="pt10"></div>
+        <div{{ with .description_class }} class="{{ . }}"{{ end }}>{{ .description }}</div>
+      </div>
+      {{ end }}
+    </div>
+  </div>
+</section>

@@ -1,5 +1,5 @@
 baseURL = "/"
-languageCode = "fr-fr"
+languageCode = "en"
 title = "MissingNo Technologies"
 relativeURLs = true
 canonifyURLs = false
