@@ -1,0 +1,19 @@
+{{ $c := .Params.contact }}
+<section class="section section-contact bg-grid" id="contact">
+  <div class="w-layout-blockcontainer container container-contact w-container">
+    <div class="wrapper-contact">
+      <div class="overlay"></div>
+      <h2 class="title-h2"><span class="glitch-word">{{ $c.heading_glitch }}</span>{{ $c.heading_suffix }}</h2>
+      <div class="pt40"></div>
+      <div class="text-xl color-gray">{{ $c.description }}</div>
+      <div class="pt40"></div>
+      <a href="mailto:{{ $c.email }}" class="button button-contact block-center w-inline-block">
+        <div class="icon-contact-letter w-embed">{{ partial "icon.html" (dict "name" "mail") }}</div>
+        <div>{{ $c.email }}</div>
+        <div class="icon-contact w-embed">{{ partial "icon.html" (dict "name" "arrow-right") }}</div>
+      </a>
+    </div>
+  </div>
+  <div class="elem-square-abs-9"></div>
+  <div class="elem-square-abs-10"></div>
+</section>

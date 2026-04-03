@@ -1,0 +1,27 @@
+{{ $e := .Params.expertise }}
+<section class="section section-expertise bg-grid" id="expertise">
+  <div class="w-layout-blockcontainer container w-container">
+    <div class="int-expertise">
+      <div>{{ $e.badge }}</div>
+    </div>
+    <div class="pt40"></div>
+    <h2 class="title-h2"><span class="glitch-word color-1">{{ $e.heading_glitch }}</span>{{ $e.heading_suffix }}</h2>
+    <div class="pt20"></div>
+    <div class="text-xl w50 color-gray">{{ $e.description }}</div>
+    <div class="wrapper-expertise">
+      {{ range $e.cards }}
+      <div class="item-expertise">
+        <div class="bg-icon-expertise">
+          <div class="icon-expertise glitch-icon w-embed">{{ partial "icon.html" (dict "name" .icon) }}</div>
+        </div>
+        <div class="pt20"></div>
+        <h3 class="title-h3 glitch-icon">{{ .title }}</h3>
+        <div class="pt20 ptflex"></div>
+        <div class="text-xl color-gray">{{ .description }}</div>
+        <div class="overlay-expertise"></div>
+      </div>
+      {{ end }}
+    </div>
+  </div>
+  <div class="elem-square-abs-5"></div>
+</section>
